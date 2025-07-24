@@ -1,0 +1,185 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.form {
+  background: white;
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+@media (max-width: 900px) {
+  .form {
+    max-width: 100%;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .form {
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #f3f4f6;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.01em;
+  font-style: italic;
+}
+
+.label {
+  display: block;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  color: #111;
+  font-weight: 500;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background-color: white;
+  color: #111;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #9ca3af;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 48px;
+  font-family: inherit;
+}
+
+.button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.outputSection {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.outputBox {
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.08);
+  padding: 1.25rem 1.25rem;
+  min-height: 64px;
+  display: flex;
+  flex-direction: column;
+  border-left: 5px solid #667eea;
+}
+
+.outputLabel {
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.outputContent {
+  color: #374151;
+  font-size: 1rem;
+  white-space: pre-line;
+  word-break: break-word;
+  min-height: 32px;
+}
+
+@media (max-width: 640px) {
+  .outputSection {
+    max-width: 100%;
+  }
+  .outputBox {
+    padding: 1rem 0.75rem;
+  }
+  .outputLabel {
+    font-size: 1rem;
+  }
+  .outputContent {
+    font-size: 0.97rem;
+  }
+} 
