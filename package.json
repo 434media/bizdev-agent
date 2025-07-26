@@ -6,11 +6,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd backend && npm run dev",
     "client": "cd frontend && npm run dev",
-    "build": "cd frontend && npm install && npm run build",
+    "build": "cd frontend && npm run build",
     "start": "cd backend && npm start",
-    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "verify": "node verify-setup.js",
-    "lint": "next lint"
+    "postinstall": "cd frontend && npm install && cd ../backend && npm install"
   },
   "dependencies": {
     "react": "19.1.0",
