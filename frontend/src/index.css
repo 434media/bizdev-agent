@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-chat-dark text-chat-text;
+  }
+}
+
+@layer components {
+  .chat-message {
+    @apply p-4 border-b border-chat-border;
+  }
+  
+  .user-message {
+    @apply bg-chat-dark;
+  }
+  
+  .assistant-message {
+    @apply bg-chat-light;
+  }
+  
+  .management-info {
+    @apply bg-purple-900/20 border-l-4 border-purple-500;
+  }
+  
+  .chat-input {
+    @apply w-full bg-chat-darker border border-chat-border rounded-lg px-4 py-3 text-chat-text placeholder-chat-text-secondary focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+  
+  .send-button {
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .save-button {
+    @apply bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-chat-darker;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-chat-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+  }
+} 
