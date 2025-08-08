@@ -5,7 +5,7 @@ const OpenAI = require('openai');
 const Airtable = require('airtable');
 const axios = require('axios');
 const cheerio = require('cheerio');
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -369,7 +369,7 @@ app.post('/save', async (req, res) => {
     console.log('Save endpoint called');
     
     // Get the most recent assistant message that contains contact information
-    const recentMessages = chatHistory.slice(-10);
+    const recentMessages = chatHistory;
     console.log('Recent messages count:', recentMessages.length);
     
     const contactMessage = recentMessages.reverse().find(msg => 
@@ -446,15 +446,15 @@ app.post('/save', async (req, res) => {
 
     console.log('Airtable table configured, attempting to save...');
 
-    // Prepare records data for all contacts
+    // Prepare records data for all contacts, mapping to correct Airtable field names
     const recordsToCreate = extractedContacts.map(contact => ({
       fields: {
-        'name': contact.name || '',
-        'title': contact.title || '',
-        'company': contact.company || '',
-        'email': contact.email || '',
-        'phone': contact.phone || '',
-        'date_added': new Date().toISOString()
+        'Name': contact.name || '', // Capitalize 'Name'
+        'Title': contact.title || '',
+        'Company': contact.company || '',
+        'Email': contact.email || '',
+        'Phone': contact.phone || '',
+        'Location': contact.location || '',
       }
     }));
 
